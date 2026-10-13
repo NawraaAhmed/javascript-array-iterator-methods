@@ -110,6 +110,11 @@ veryOldInventors = inventors.filter((oneInventor) => {
 
 // Check your work:
 console.log("Exercise 1 my result: ", veryOldInventors);
+console.log("Exercise 1 correct result: ", [
+  { first: "Galileo", last: "Galilei", year: 1564, passed: 1642 },
+  { first: "Johannes", last: "Kepler", year: 1571, passed: 1630 },
+]);
+console.log("--------------------");
 
 /*
 Exercise 2: Array.prototype.map()
@@ -135,6 +140,21 @@ inventorNames = inventors.map((oneInventor) => {
 
 // Check your work:
 console.log("Exercise 2 my result: ", inventorNames);
+console.log("Exercise 2 correct result: ", [
+  { first: "Albert", last: "Einstein" },
+  { first: "Isaac", last: "Newton" },
+  { first: "Galileo", last: "Galilei" },
+  { first: "Marie", last: "Curie" },
+  { first: "Johannes", last: "Kepler" },
+  { first: "Nicolaus", last: "Copernicus" },
+  { first: "Max", last: "Planck" },
+  { first: "Katherine", last: "Blodgett" },
+  { first: "Ada", last: "Lovelace" },
+  { first: "Sarah E.", last: "Goode" },
+  { first: "Lise", last: "Meitner" },
+  { first: "Hanna", last: "Hammarström" },
+]);
+console.log("--------------------");
 
 /*
 Exercise 3: Array.prototype.sort()
@@ -151,6 +171,21 @@ sortedByBirthYear = inventors.sort((a, b) => {
 });
 // Check your work:
 console.log("Exercise 3 my result: ", sortedByBirthYear);
+console.log("Exercise 3 correct result: ", [
+  { first: "Nicolaus", last: "Copernicus", year: 1473, passed: 1543 },
+  { first: "Galileo", last: "Galilei", year: 1564, passed: 1642 },
+  { first: "Johannes", last: "Kepler", year: 1571, passed: 1630 },
+  { first: "Isaac", last: "Newton", year: 1643, passed: 1727 },
+  { first: "Ada", last: "Lovelace", year: 1815, passed: 1852 },
+  { first: "Hanna", last: "Hammarström", year: 1829, passed: 1909 },
+  { first: "Sarah E.", last: "Goode", year: 1855, passed: 1905 },
+  { first: "Max", last: "Planck", year: 1858, passed: 1947 },
+  { first: "Marie", last: "Curie", year: 1867, passed: 1934 },
+  { first: "Lise", last: "Meitner", year: 1878, passed: 1968 },
+  { first: "Albert", last: "Einstein", year: 1879, passed: 1955 },
+  { first: "Katherine", last: "Blodgett", year: 1898, passed: 1979 },
+]);
+console.log("--------------------");
 
 /* 
 Exercise 4: Array.prototype.find()
@@ -173,6 +208,13 @@ inventorNamedAda = inventors.find((oneInventor) => {
 });
 // Check your work:
 console.log("Exercise 4 my result: ", inventorNamedAda);
+console.log("Exercise 4 correct result: ", {
+  first: "Ada",
+  last: "Lovelace",
+  year: 1815,
+  passed: 1852,
+});
+console.log("--------------------");
 
 /*
 Exercise 5: Array.prototype.map()
@@ -195,6 +237,49 @@ firstLast = people.map((onePerson) => {
 });
 // Check your work:
 console.log("Exercise 5 my result: ", firstLast);
+console.log("Exercise 5 correct result: ", [
+  "Carl Becker",
+  "Samuel Beckett",
+  "Mick Beddoes",
+  "Henry Beecher",
+  "Ludwig Beethoven",
+  "Menachem Begin",
+  "Hilaire Belloc",
+  "Saul Bellow",
+  "Robert Benchley",
+  "Peter Benenson",
+  "David Ben-Gurion",
+  "Walter Benjamin",
+  "Tony Benn",
+  "Chester Bennington",
+  "Leana Benson",
+  "Silas Bent",
+  "Lloyd Bentsen",
+  "Ric Berger",
+  "Ingmar Bergman",
+  "Luciano Berio",
+  "Milton Berle",
+  "Irving Berlin",
+  "Eric Berne",
+  "Sandra Bernhard",
+  "Yogi Berra",
+  "Halle Berry",
+  "Wendell Berry",
+  "Erin Bethea",
+  "Aneurin Bevan",
+  "Ken Bevel",
+  "Joseph Biden",
+  "Ambrose Bierce",
+  "Steve Biko",
+  "Josh Billings",
+  "Frank Biondo",
+  "Augustine Birrell",
+  "Elk Black",
+  "Robert Blair",
+  "Tony Blair",
+  "William Blake",
+]);
+console.log("--------------------");
 
 /*
 Exercise 6: Array.prototype.some()
@@ -216,6 +301,8 @@ isAdultPresent = devs.some((onePerson) => {
 });
 // Check your work:
 console.log("Exercise 6 my result: ", isAdultPresent);
+console.log("Exercise 6 correct result: ", true);
+console.log("--------------------");
 
 /*
 Exercise 7: Array.prototype.every()
@@ -238,6 +325,8 @@ isEveryone19OrOlder = devs.every((onePerson) => {
 });
 // Check your work:
 console.log("Exercise 7 my result: ", isEveryone19OrOlder);
+console.log("Exercise 7 correct result: ", false);
+console.log("--------------------");
 
 /*
 Exercise 8: Array.prototype.find()
@@ -256,6 +345,8 @@ commentById = comments.find((oneId) => {
 });
 // Check your work:
 console.log("Exercise 8 my result: ", commentById);
+console.log("Exercise 8 correct result: ", { text: "Super good", id: 823423 });
+console.log("--------------------");
 
 /*
 Exercise 9: Array.prototype.findIndex()
@@ -274,3 +365,84 @@ idx = comments.findIndex((specificId) => {
 });
 // Check your work:
 console.log("Exercise 9 my result: ", idx);
+console.log("Exercise 9 correct result: ", 3);
+console.log("--------------------");
+
+/*
+Level Up exercise 1: Array.prototype.reduce()
+
+Calculate the combined lifespan of all the inventors using 
+Array.prototype.reduce()
+
+- Each object in the array includes these properties: 
+  'first', 'last', 'year' (birth year), and 'passed' (year of death).
+- Use the Array.prototype.reduce() method to calculate the sum of the total 
+  years lived by all the inventors.
+- Store the total sum in the variable 'totalYearsLived'.
+
+Hints:
+
+- Inside the reduce callback function, calculate the lifespan of each inventor 
+  (passed - year).
+- Accumulate this lifespan in the 'totalYearsLived' variable.
+- Remember, reduce takes a callback function and an initial value for the 
+  accumulator.
+*/
+
+let totalYearsLived = 0;
+
+// Complete the exercise in the space below:
+totalYearsLived = inventors.reduce(
+  (total, oneInventor) => total + (oneInventor.passed - oneInventor.year),
+  0,
+);
+// Check your work:
+console.log("Level Up 1 my result: ", totalYearsLived);
+console.log("Level Up 1 correct result: ", 861);
+console.log("--------------------");
+
+/*
+Level Up exercise 2: Array.prototype.reduce()
+
+Tallying travel methods using Array.prototype.reduce(). 
+
+Count the number of times each travel method appears in the 'travelMethods'
+array.
+
+- The resulting object should have keys as the travel methods 
+  ('car', 'truck', 'bike', etc.) and values as their respective counts.
+- Store this object in the variable 'travelMethodCounts'.
+
+Hints:
+- Inside the reduce function, check if the travel method already exists as a key
+  in your accumulator object. If it does, increment its count. If not, add it 
+  to the object and give it a value of 1.
+- Since you want to return an object, be sure to pass an empty {} for the 
+  initial value of the "accumulator".
+*/
+
+let travelMethodCounts = {};
+
+// Complete the exercise in the space below:
+travelMethodCounts = travelMethods.reduce(
+  (counts, oneMethod) => {
+    counts[oneMethod]++;
+    return counts;
+  },
+  {
+    car: 0,
+    truck: 0,
+    bike: 0,
+    walk: 0,
+    van: 0,
+  },
+);
+// Check your work:
+console.log("Level Up 2 my result: ", travelMethodCounts);
+console.log("Level Up 2 correct result: ", {
+  car: 5,
+  truck: 3,
+  bike: 2,
+  walk: 2,
+  van: 2,
+});
